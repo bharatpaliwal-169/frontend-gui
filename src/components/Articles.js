@@ -5,7 +5,7 @@ const Articles = () =>{
   return(
     <React.Fragment>
         <div className='row'>
-          <section className='col-12 col-sm-7 offset-sm-2'>
+          <section className='col-12 col-sm-8 '>
             {data.map((item) => {
               return <ArticlePost {...item} /> 
             })}

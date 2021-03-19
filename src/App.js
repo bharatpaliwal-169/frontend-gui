@@ -1,13 +1,13 @@
 import React from 'react'
-import './App.css';
-
-import Articles from './components/Articles';
+import {BrowserRouter as Router} from 'react-router-dom';
+import BaseRouter from './route';
 
 function App() {
   return (
     <div className='container-fluid'>
-      {/* <h1> Hello World </h1> */}
-      <Articles />
+      <Router>
+        <BaseRouter />
+      </Router>
     </div>
   );
 }
