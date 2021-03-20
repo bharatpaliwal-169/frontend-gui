@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
-import {Route,Switch} from 'react-router-dom';
+import {Route} from 'react-router-dom';
 import ArticleList from './components/ArticleList';
 import ArticleDetails from './components/ArticleDetails';
-import Error from './components/Error';
+import ArticleForm from './components/ArticleForm';
+
 class BaseRouter extends Component {
   render() {
     return (
       <React.Fragment>
-        <Switch>
-          <Route exact path="/" component={ArticleList} />
-          <Route path="/:articleID" component={ArticleDetails} />
-          <Route  component={Error} />
-        </Switch>
+        <Route exact path="/" component={ArticleList} />{" "}
+        <Route exact path="/articles/:articleID/" component={ArticleDetails} />
+        <Route exact path="/create"  component={ArticleForm}  />{" "}
       </React.Fragment>
     )
   }

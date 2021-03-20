@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import {Link} from 'react-router-dom';
 import ArticlePost from './ArticlePost';
 
 class ArticleList extends Component {
@@ -20,6 +21,9 @@ class ArticleList extends Component {
     return (
       <React.Fragment>
         <div className='row'>
+          <Link to={"/create"} className="custom-head">
+            Add Post
+          </Link>
           <section className='col-12 col-sm-7 offset-sm-2'>
             {/* {data.map((item) => {
               return <ArticlePost {...item} /> 

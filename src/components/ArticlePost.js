@@ -8,7 +8,7 @@ const ArticlePost = (props) =>{
     <>
       <article className='card  mt-4 mb-4' key={id}>
         <div className='card-header bg-secondary text-white custom-head' >
-          <Link to={`/${id}`} className="custom-head">
+          <Link to={`/articles/${id}`} className="custom-head">
             {title}
           </Link>
         </div>
