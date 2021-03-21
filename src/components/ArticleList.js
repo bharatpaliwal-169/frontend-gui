@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import {Link} from 'react-router-dom';
+// import {Link} from 'react-router-dom';
 import ArticlePost from './ArticlePost';
+import ArticleForm from './ArticleForm';
 
 class ArticleList extends Component {
   state = {
@@ -13,7 +14,7 @@ class ArticleList extends Component {
           this.setState({ 
             articles: response.data
           })
-          console.log(response.data);
+          // console.log(response.data);
         })
   }
   
@@ -21,10 +22,11 @@ class ArticleList extends Component {
     return (
       <React.Fragment>
         <div className='row'>
-          <Link to={"/create"} className="custom-head">
-            Add Post
-          </Link>
           <section className='col-12 col-sm-7 offset-sm-2'>
+          {/* <Link to={"/create"} className="btn btn-lg btn-primary">
+            Add Post
+          </Link> */}
+            
             {/* {data.map((item) => {
               return <ArticlePost {...item} /> 
             })} */}
@@ -33,6 +35,10 @@ class ArticleList extends Component {
             return <ArticlePost {...article} key={article.id} />
           })}
 
+          </section>
+        
+          <section className='col-12 mt-2'>
+            <ArticleForm requestType='post' articleID={null} btnText = 'Create Article' />
           </section>
         </div>
     </React.Fragment>
