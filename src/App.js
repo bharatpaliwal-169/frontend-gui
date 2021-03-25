@@ -4,11 +4,11 @@ import BaseRouter from './route';
 
 function App() {
   return (
-    <div className='container-fluid'>
+    <React.Fragment>
       <Router>
         <BaseRouter />
       </Router>
-    </div>
+    </React.Fragment>
   );
 }
 

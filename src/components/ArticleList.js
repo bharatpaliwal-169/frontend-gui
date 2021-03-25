@@ -3,6 +3,7 @@ import axios from 'axios';
 // import {Link} from 'react-router-dom';
 import ArticlePost from './ArticlePost';
 import ArticleForm from './ArticleForm';
+import NavBarReact from './NavBarReact';
 
 class ArticleList extends Component {
   state = {
@@ -21,12 +22,12 @@ class ArticleList extends Component {
   render() {
     return (
       <React.Fragment>
+        <NavBarReact />
         <div className='row'>
           <section className='col-12 col-sm-7 offset-sm-2'>
-          {/* <Link to={"/create"} className="btn btn-lg btn-primary">
-            Add Post
-          </Link> */}
-            
+            {/* <Link to={"/create"} className="btn btn-lg btn-primary">
+              Add Post
+              </Link> */}
             {/* {data.map((item) => {
               return <ArticlePost {...item} /> 
             })} */}

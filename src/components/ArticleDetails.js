@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import {Redirect} from 'react-router-dom';
 import ArticleForm from './ArticleForm';
-
+import {Button} from 'reactstrap';
 class ArticleDetails extends Component {
 
   state ={
@@ -18,6 +19,15 @@ class ArticleDetails extends Component {
           // console.log(response.data);
         })
   }
+
+  handleDelete = () => {
+    const articleID = this.props.match.params.articleID;
+    axios.delete(`http://127.0.0.1:8000/api/${articleID}/delete`)
+    return <Redirect to='/'  />
+        
+  }
+
+
   render() {
     return (
       <React.Fragment>
@@ -28,6 +38,9 @@ class ArticleDetails extends Component {
         <div className='col-12 col-sm-10'>
           <h4> Update article </h4>
             <ArticleForm requestType='put' articleID={this.state.article.id} btnText='Update Article'/>
+            <form onSubmit={this.handleDelete}>
+              <Button color='danger'  htmlType='submit' >Delete</Button>
+            </form>
         </div>
       </React.Fragment>
     );
