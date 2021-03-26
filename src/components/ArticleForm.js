@@ -40,9 +40,7 @@ class ArticleForm extends Component {
 
   render() {
     return (
-      <div className="container">
-        <div className="row">
-          <div className="col-12 col-sm-10">
+          <div className="col-10 offset-sm-1 mb-5">
             <Form onSubmit={event => this.handleFormSubmit(
               event,
               this.props.requestType,
@@ -63,8 +61,7 @@ class ArticleForm extends Component {
               </Button>
             </Form>
           </div>
-        </div>
-      </div>
+      
     );
   }
 }

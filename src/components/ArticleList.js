@@ -23,7 +23,7 @@ class ArticleList extends Component {
     return (
       <React.Fragment>
         <NavBarReact />
-        <div className='row'>
+        <div className='container-fluid'>
           <section className='col-12 col-sm-7 offset-sm-2'>
             {/* <Link to={"/create"} className="btn btn-lg btn-primary">
               Add Post
@@ -38,7 +38,8 @@ class ArticleList extends Component {
 
           </section>
         
-          <section className='col-12 mt-2'>
+          <section className='col-12 mt-2 form-border'>
+            <h1 className='offset-sm-4'>Create your Article</h1>
             <ArticleForm requestType='post' articleID={null} btnText = 'Create Article' />
           </section>
         </div>

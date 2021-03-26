@@ -1,15 +1,32 @@
-import React from 'react'
+import React, { Component }from 'react'
 import {BrowserRouter as Router} from 'react-router-dom';
 import BaseRouter from './route';
-
-function App() {
-  return (
-    <React.Fragment>
-      <Router>
-        <BaseRouter />
-      </Router>
-    </React.Fragment>
-  );
+import {connect} from 'react-redux';
+import * as actions from './store/actions/auth';
+// import NavBarReact from './components/NavBarReact';
+class App extends Component{
+  render() {
+    return (
+      <React.Fragment>
+          <Router>
+            <BaseRouter {...this.props}  />
+          </Router>
+        
+      </React.Fragment>
+    );
+  }
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    isAuthenticated: state.token !== null
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onTryAutoSignup: () => dispatch(actions.authCheckState())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

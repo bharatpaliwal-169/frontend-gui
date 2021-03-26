@@ -31,16 +31,17 @@ class ArticleDetails extends Component {
   render() {
     return (
       <React.Fragment>
-        <div key={this.state.article.id} className='card'>
-          <h1 className='card-header'>{this.state.article.title}</h1>
+        <div key={this.state.article.id} className='card  mb-5'>
+          <p className='card-header display-4 '>{this.state.article.title}</p>
           <p className='card-body'>{this.state.article.content}</p>
         </div>
-        <div className='col-12 col-sm-10'>
-          <h4> Update article </h4>
+        
+        <div className='col-12 col-sm-7 form-border offset-sm-2'>
+          <p className='display-4 offset-sm-3'> Update article </p>
             <ArticleForm requestType='put' articleID={this.state.article.id} btnText='Update Article'/>
-            <form onSubmit={this.handleDelete}>
-              <Button color='danger'  htmlType='submit' >Delete</Button>
-            </form>
+          <form onSubmit={this.handleDelete}>
+            <Button color='danger'  htmlType='submit' className='mt-5 ms-3 mb-4 btn-block' >Delete Article</Button>
+          </form>
         </div>
       </React.Fragment>
     );
